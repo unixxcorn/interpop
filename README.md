@@ -1,5 +1,7 @@
 # Greeting! This is repository for PSIT project
 
+### GIT
+#### Download https://git-scm.com/downloads
 How to git remote to this Repository // connect
 * git init
 * git remote add [project name] [https://github.com/unixxcorn/we-have-a-plan.git]
