@@ -4,7 +4,7 @@
 #### Download https://git-scm.com/downloads
 How to git remote to this Repository // connect
 * git init
-* git remote add [project name] [https://github.com/unixxcorn/we-have-a-plan.git]
+* git remote add [project name] https://github.com/unixxcorn/we-have-a-plan.git
 
 How to git push to this Repository // push
 * git add [File]
