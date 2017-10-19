@@ -1,4 +1,4 @@
-#H1 Greeting! This is repository for PSIT project
+# Greeting! This is repository for PSIT project
 
 How to git push to this Repository
 * git init
