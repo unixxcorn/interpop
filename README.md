@@ -1,8 +1,8 @@
-#Internet Population
-##PSIT Project
-###Author : We have a plan.
+# Internet Population
+## PSIT Project
+### Author : We have a plan.
 
-###Detail
+### Detail
 1. ข้อมูลที่เอามาใช้คืออะไร
 ..* ข้อมูลอัตราการใช้งานและจำนวนประชากรที่ใช้ คอมพิวเตอร์ โทรศัพท์มือถือ และ อินเทอร์เน็ต
 2. เอามาจากไหนและมีจำนวนมากน้อยเพียงใด 
@@ -23,14 +23,14 @@
 8. URL github ของโครงการ ที่สามารถเข้าไปดู source code ได้
 ..* https://github.com/unixxcorn/we-have-a-plan
 
-###GIT
-####Download https://git-scm.com/downloads
-#####วิธีรีโหมด GIT // เปิดโฟล์เดอร์
+### GIT
+#### Download https://git-scm.com/downloads
+##### วิธีรีโหมด GIT // เปิดโฟล์เดอร์
 * git init
 * git remote add [project name] https://github.com/unixxcorn/we-have-a-plan.git
-#####วิธีดึงไฟล์  // เปิดดาวน์โหลด
+##### วิธีดึงไฟล์  // เปิดดาวน์โหลด
 * git pull -u [project name] [branch]
-#####วิธีดันไฟล์  // เปิดอัพโหลด
+##### วิธีดันไฟล์  // เปิดอัพโหลด
 * git add [File]
 * git commit -m "What do you want to say?"
 * git push -u [project name] [branch]
