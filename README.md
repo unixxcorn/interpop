@@ -26,10 +26,10 @@
 #### Download https://git-scm.com/downloads
 ##### วิธีรีโหมด GIT // เปิดโฟล์เดอร์
 * git init
-* git remote add [project name] https://github.com/unixxcorn/we-have-a-plan.git
+* git remote add [ชื่อรีโหมด] https://github.com/unixxcorn/we-have-a-plan.git
 ##### วิธีดึงไฟล์  // เปิดดาวน์โหลด
-* git pull -u [project name] [branch]
+* git pull -u [ชื่อรีโหมด] [branch]
 ##### วิธีดันไฟล์  // เปิดอัพโหลด
-* git add [File]
+* git add [ชื่อไฟล์.นามสกุล]
 * git commit -m "What do you want to say?"
-* git push -u [project name] [branch]
+* git push -u [ชื่อรีโหมด] [branch]
