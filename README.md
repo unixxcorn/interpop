@@ -1,6 +1,5 @@
 # Internet Population
-## PSIT Project
-### Author : We have a plan.
+### Author : We have a plan. For : PSIT Project
 
 ### Detail
 1. ข้อมูลที่เอามาใช้คืออะไร
