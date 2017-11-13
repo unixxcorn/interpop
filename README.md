@@ -8,9 +8,9 @@ That make you easy to do data analysis.
 
 ## Requirement
 * Python 3 with follow modules
-..* Pandas
-..* Pygal
-..* Django
+  * Pandas
+  * Pygal
+  * Django
 
 ## Plan
 
