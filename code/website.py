@@ -1,7 +1,7 @@
 from flask import Flask
 import pygal
 
-app = Flask(__name__)
+app = Flask("Internet Population")
 
 @app.route('/')
 def hello_world():
