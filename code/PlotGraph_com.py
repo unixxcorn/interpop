@@ -1,7 +1,7 @@
 """ To create for only computer using's graph"""
 import pandas as pd
 import pygal as pg
-def com(whatfilter="activity", whatyear="all", num=0):
+def com(whatfilter, whatyear, num=0):
     """
         Plot only Computer using graph
         com(whatilter, whatyear)
@@ -19,8 +19,8 @@ def com(whatfilter="activity", whatyear="all", num=0):
     data = call_data(whatyear, whatfilter, num)
     info_kind = select_data(data, whatyear, whatfilter)
     info = info_kind[0]
-    #print(data)
-    #print(info)
+    print(data)
+    print(info)
 
     #plotting graph all years use line grapah / single year uses bar graph
     head_graph = 'Number of computer users by '+whatfilter+' '+filter_text+' to use computer'+last+last_all
@@ -29,7 +29,8 @@ def com(whatfilter="activity", whatyear="all", num=0):
         chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+')')
         data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
         kind = list((data[num])[whatfilter])
-        #print(kind)
+        print(kind)
+
         for i in range(len(kind)):
             chart.add(kind[i], info[i])
     else: #single year
@@ -39,7 +40,7 @@ def com(whatfilter="activity", whatyear="all", num=0):
         for i in range(len(kind)):
             chart.add(kind[i], info[i])
     chart.x_labels = [i for i in data_head]
-    return chart
+    chart.render_to_file('../graph/Graph_com.svg')
 #===============================================================================
 def call_data(whatyear, whatfilter, num):
     """This function call data and return data
@@ -48,27 +49,27 @@ def call_data(whatyear, whatfilter, num):
     num = 0 #Table12 location
     if whatfilter.lower() == 'activity': num = 1 #Tab14 activity
     if whatfilter.lower() == 'region': num = 2 #Tab16 region
-    find_data = {'2559':['./usedata/59/Tab12.csv', \
-                         './usedata/59/Tab14.csv', \
-                         './usedata/59/Tab16.csv'],
-                 '2558':['./usedata/58/Tab12.csv', \
-                         './usedata/58/Tab14.csv', \
-                         './usedata/58/Tab16.csv'],
-                 '2557':['./usedata/57/Tab12.csv', \
-                         './usedata/57/Tab14.csv', \
-                         './usedata/57/Tab16.csv'],
-                 '2556':['./usedata/56/Tab12.csv', \
-                         './usedata/56/Tab14.csv', \
-                         './usedata/56/Tab16.csv'],
-                 '2555':['./usedata/55/Tab12.csv', \
-                         './usedata/55/Tab14.csv', \
-                         './usedata/55/Tab16.csv'],
-                 '2554':['./usedata/54/Tab12.csv', \
-                         './usedata/54/Tab14.csv', \
-                         './usedata/54/Tab16.csv'],
-                 '2553':['./usedata/53/Tab12.csv', \
-                         './usedata/53/Tab14.csv', \
-                         './usedata/53/Tab16.csv']}
+    find_data = {'2559':['../usedata/59/Tab12.csv', \
+                         '../usedata/59/Tab14.csv', \
+                         '../usedata/59/Tab16.csv'],
+                 '2558':['../usedata/58/Tab12.csv', \
+                         '../usedata/58/Tab14.csv', \
+                         '../usedata/58/Tab16.csv'],
+                 '2557':['../usedata/57/Tab12.csv', \
+                         '../usedata/57/Tab14.csv', \
+                         '../usedata/57/Tab16.csv'],
+                 '2556':['../usedata/56/Tab12.csv', \
+                         '../usedata/56/Tab14.csv', \
+                         '../usedata/56/Tab16.csv'],
+                 '2555':['../usedata/55/Tab12.csv', \
+                         '../usedata/55/Tab14.csv', \
+                         '../usedata/55/Tab16.csv'],
+                 '2554':['../usedata/54/Tab12.csv', \
+                         '../usedata/54/Tab14.csv', \
+                         '../usedata/54/Tab16.csv'],
+                 '2553':['../usedata/53/Tab12.csv', \
+                         '../usedata/53/Tab14.csv', \
+                         '../usedata/53/Tab16.csv']}
 
     if whatyear == 'all':
         year = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
@@ -132,3 +133,4 @@ def select_data(data, whatyear, whatfilter=''):
         info = [[(data[kind][i]*100)/data['Total'][i] for i in \
                 range(len(data[kind]))] for kind in list(data)[2:]]
     return (info, kind)
+com(input(), input())
