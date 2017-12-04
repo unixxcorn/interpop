@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import pygal
 
 app = Flask("Internet Population")
@@ -6,7 +6,8 @@ app = Flask("Internet Population")
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
-@app.route('/charts/line.svg')
+
+@app.route('/charts/test')
 def line_route():
     line_chart = pygal.Line()
     line_chart.title = 'Browser usage evolution (in %)'
@@ -20,17 +21,21 @@ def line_route():
 @app.route('/charts/main/')
 def PlotGraph_main_route():
     import PlotGraph_main
-    return PlotGraph_main.main().render_response()
+    chart = PlotGraph_main.main().render_data_uri()
+    return render_template( 'charts.html', chart = chart)
 @app.route('/charts/main/<whatuse>/<whatyear>/<whatfilter>')
 def PlotGraph_main_route_attrib(whatuse, whatyear, whatfilter):
     import PlotGraph_main
-    return PlotGraph_main.main(whatuse, whatyear, whatfilter).render_response()
+    chart = PlotGraph_main.main(whatuse, whatyear, whatfilter).render_response()
+    return render_template( 'charts.html', chart = chart)
 
-@app.route('/charts/com/')
+@app.route('/charts/computer/')
 def PlotGraph_com_route():
     import PlotGraph_com
-    return PlotGraph_com.com().render_response()
-@app.route('/charts/com/<whatyear>/<whatfilter>')
+    chart = PlotGraph_com.com().render_response()
+    return render_template( 'charts.html', chart = chart)
+@app.route('/charts/computer/<whatyear>/<whatfilter>')
 def PlotGraph_com_route_attrib(whatyear, whatfilter):
     import PlotGraph_com
-    return PlotGraph_com.com(whatfilter, whatyear).render_response()
+    chart = PlotGraph_com.com(whatfilter, whatyear).render_response()
+    return render_template( 'charts.html', chart = chart)

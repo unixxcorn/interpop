@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block aside %}
+
+{% endblock %}
+{% block body %}
+<div id="chart" class="col-10 mx-auto m-5">
+   <embed type="image/svg+xml" src= {{ chart|safe }} />
+</div>
+{% endblock %}
