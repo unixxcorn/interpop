@@ -49,33 +49,32 @@ def main(whatuse = 'Computer', whatyear = 'all', whatfilter = 'area'):
         data_head = [i for i in data[head][1:]]
         bar_chart.add('', info)
     bar_chart.x_labels = [i for i in data_head]
-    bar_chart.render_to_file('../Graph/Graph_main.svg')
-    return info
+    return bar_chart
 
 def call_data(whatyear, whatfilter, num):
     """This function call data and return data"""
     """This function return data_head and data"""
-    find_data = {'2559':['../usedata/59/Tab2.csv', \
-                         '../usedata/59/Tab3.csv', \
-                         '../usedata/59/Tab4.csv'],
-                 '2558':['../usedata/58/Tab2.csv', \
-                         '../usedata/58/Tab3.csv', \
-                         '../usedata/58/Tab4.csv'],
-                 '2557':['../usedata/57/Tab2.csv', \
-                         '../usedata/57/Tab3.csv', \
-                         '../usedata/57/Tab4.csv'],
-                 '2556':['../usedata/56/Tab2.csv', \
-                         '../usedata/56/Tab3.csv', \
-                         '../usedata/56/Tab4.csv'],
-                 '2555':['../usedata/55/Tab2.csv', \
-                         '../usedata/55/Tab3.csv', \
-                         '../usedata/55/Tab4.csv'],
-                 '2554':['../usedata/54/Tab2.csv', \
-                         '../usedata/54/Tab3.csv', \
-                         '../usedata/54/Tab4.csv'],
-                 '2553':['../usedata/53/Tab2.csv', \
-                         '../usedata/53/Tab3.csv', \
-                         '../usedata/53/Tab4.csv'],}
+    find_data = {'2559':['./usedata/59/Tab2.csv', \
+                         './usedata/59/Tab3.csv', \
+                         './usedata/59/Tab4.csv'],
+                 '2558':['./usedata/58/Tab2.csv', \
+                         './usedata/58/Tab3.csv', \
+                         './usedata/58/Tab4.csv'],
+                 '2557':['./usedata/57/Tab2.csv', \
+                         './usedata/57/Tab3.csv', \
+                         './usedata/57/Tab4.csv'],
+                 '2556':['./usedata/56/Tab2.csv', \
+                         './usedata/56/Tab3.csv', \
+                         './usedata/56/Tab4.csv'],
+                 '2555':['./usedata/55/Tab2.csv', \
+                         './usedata/55/Tab3.csv', \
+                         './usedata/55/Tab4.csv'],
+                 '2554':['./usedata/54/Tab2.csv', \
+                         './usedata/54/Tab3.csv', \
+                         './usedata/54/Tab4.csv'],
+                 '2553':['./usedata/53/Tab2.csv', \
+                         './usedata/53/Tab3.csv', \
+                         './usedata/53/Tab4.csv'],}
     if whatyear == 'all':
         year = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
         data = [call_data(i, whatfilter, num) for i in year]
@@ -99,4 +98,3 @@ def select_data(data, whatuse, whatyear):
         info = [(data[use][i]*100)/data['Total'][i]\
         for i in range(1, len(data[use]))]
     return info
-main(input(), input(), input())
