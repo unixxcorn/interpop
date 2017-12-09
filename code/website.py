@@ -12,10 +12,12 @@ def PlotGraph_main_route():
     import PlotGraph_main
     chart = PlotGraph_main.main().render_data_uri()
     return render_template( 'charts.html', chart = chart, asider = 'navside_main.html')
-@app.route('/charts/main/<whatuse>/<whatyear>/<whatfilter>')
-def PlotGraph_main_route_attrib(whatuse, whatyear, whatfilter):
+@app.route('/charts/main/<whatuse>/')
+@app.route('/charts/main/<whatuse>/<filterby>/')
+@app.route('/charts/main/<whatuse>/<filterby>/<whatyear>/')
+def PlotGraph_main_route_attrib(whatuse = 'Computer',filterby = 'area', whatyear = 'all'):
     import PlotGraph_main
-    chart = PlotGraph_main.main(whatuse, whatyear, whatfilter).render_response()
+    chart = PlotGraph_main.main(whatuse, whatyear, filterby).render_data_uri()
     return render_template( 'charts.html', chart = chart, asider = 'navside_main.html')
 
 @app.route('/charts/computer/')
@@ -33,6 +35,16 @@ def PlotGraph_com_route_attrib(whatyear, whatfilter):
     import PlotGraph_com
     chart = PlotGraph_com.com(whatfilter, whatyear).render_data_uri()
     return render_template( 'charts.html', chart = chart, asider = 'navside_com.html')
+
+@app.route('/charts/internet/')
+@app.route('/charts/internet/<whatfilter>/')
+@app.route('/charts/internet/<whatfilter>/<whatyear>')
+def PlotGraph_internet_route_attrib(whatyear='all', whatfilter='1'):
+    import PlotGraph_internet
+    if whatyear != 'all':
+        whatyear = whatyear[-2:]
+    chart = PlotGraph_internet.main(whatfilter, whatyear).render_data_uri()
+    return render_template( 'charts.html', chart = chart, asider = 'navside_internet.html')
 
 @app.errorhandler(500)
 def internal_error(error):

@@ -19,9 +19,6 @@ def com(whatfilter="location", whatyear="all",whatfilter_type='1', num=0):
     data = call_data(whatyear, whatfilter, num)
     info_kind = select_data(data, whatyear, whatfilter, int(whatfilter_type))
     info = info_kind[0]
-    #print(data)
-    #print(info)
-
     #plotting graph all years use line grapah / single year uses bar graph
     head_graph = 'Number of computer users by '+whatfilter+' '+filter_text+' to use computer'+last+last_all
     if whatyear == 'all':
@@ -30,7 +27,6 @@ def com(whatfilter="location", whatyear="all",whatfilter_type='1', num=0):
             chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+' old)')
             data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
             kind = list((data[num])[whatfilter])
-            #print(kind)
             for i in range(len(kind)):
                 chart.add(kind[i], info[i])
         if whatfilter.lower() == 'region':
@@ -38,7 +34,6 @@ def com(whatfilter="location", whatyear="all",whatfilter_type='1', num=0):
             chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+')')
             data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
             kind = list((data[num])[whatfilter])
-            #print(kind)
             for i in range(len(kind)):
                 chart.add(kind[i], info[i])
     else: #single year
