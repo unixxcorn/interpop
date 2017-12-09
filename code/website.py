@@ -46,6 +46,14 @@ def PlotGraph_internet_route_attrib(whatyear='all', whatfilter='1'):
     chart = PlotGraph_internet.main(whatfilter, whatyear).render_data_uri()
     return render_template( 'charts.html', chart = chart, asider = 'navside_internet.html')
 
+@app.route('/charts/cellular/')
+@app.route('/charts/cellular/<whatfilter>/')
+@app.route('/charts/cellular/<whatfilter>/<whatyear>')
+def PlotGraph_cellular_route_attrib():
+    import PlotGraph_phone
+    chart = PlotGraph_phone.main().render_data_uri()
+    return render_template( 'charts.html', chart = chart, asider = 'navside_phone.html')
+
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('error.html', error = 500), 500
