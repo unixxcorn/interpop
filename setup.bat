@@ -1,3 +1,3 @@
 @echo off
-pip install flask, pygal, pandas, virtualenv
+pip install flask, pygal, pandas, markdown
 ./run.bat

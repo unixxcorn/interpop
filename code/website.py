@@ -4,8 +4,13 @@ import pygal
 app = Flask("Internet Population")
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template( 'home.html')
+
+@app.route('/analysis/')
+@app.route('/analysis/<data>')
+def analysis_route(data="Internet Population"):
+    return render_template('analysis.html', **locals())
 
 @app.route('/charts/main/')
 def PlotGraph_main_route():

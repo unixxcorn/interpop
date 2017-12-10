@@ -10,9 +10,19 @@ html, body{
     border-radius: 3px;
     box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    color:rgb(5, 15, 25);
 }
 .jumbotron{
     height: 80vh;
     background: none;
     padding: 7em 3em;
+}
+.detail > div{
+    margin: 50px 0;
+    text-align: justify;
+    text-indent: 25px;
+}
+.detail > div > img{
+    margin: 10px 0;
+    border-radius: 3px;
 }
