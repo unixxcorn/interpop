@@ -3,7 +3,64 @@
 	  <div class="item">
 	    <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
 	      <h3 class="dropdown-toggle">Phone Usage</h3>
-	    </a>
+			</a>
+			<div id="accordion" role="tablist">
+				<div class="card mt-2 mr-md-3">
+					<div class="card-header" role="tab" id="headingOne">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Change View
+							</a>
+						</h5>
+					</div>
+
+					<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body col-12 row">
+							<form class="form-group col-12" id="selectbox" onchange="warp()">
+								<select class="form-control mb-2" id="FormSelectType">
+									<option value='all'>All Service</option>
+									<option value='sms'>SMS</option>
+									<option value='data'>Data</option>
+									<option value="banking">Mobile Banking</option>
+									<option value="function">Mobile Function</option>
+									<option value="other">Other</option>
+								</select>
+								<select class="form-control mb-2" id="FormSelectZone">
+									<option value='whole'>Whole Kingdom</option>
+									<option value='municipal'>Municipal Area</option>
+									<option value='non-municipal'>Non-Municipal Area</option>
+								</select>
+								<select class="form-control mb-2" id="FormSelectYear">
+									<option value='all'>All Years</option>
+									<option value='2553'>2553</option>
+									<option value='2554'>2554</option>
+									<option value='2555'>2555</option>
+									<option value='2556'>2556</option>
+									<option value='2557'>2557</option>
+									<option value='2558'>2558</option>
+									<option value='2559'>2559</option>									
+								</select>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	window.onload = function(){
+		var loc = window.location.href.slice(8).split('/');
+		if (loc[3] !== '' && loc[4] !== '' && loc[5] !== ''){
+			document.getElementById("FormSelectType").value = loc[3];
+			document.getElementById("FormSelectZone").value = loc[4];
+			document.getElementById("FormSelectYear").value = loc[5];
+		}
+	}
+	function warp(){
+			var type = document.getElementById("FormSelectType").value;
+			var zone = document.getElementById("FormSelectZone").value;
+			var year = document.getElementById("FormSelectYear").value;
+			location.href= '/charts/phone/'+type+'/'+zone+'/'+year;
+	}       
+</script>

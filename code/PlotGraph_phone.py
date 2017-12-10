@@ -3,29 +3,29 @@ import pandas as pd
 import numpy as np
 import pygal as pg
 
-def main(year = 'all', area = 'Whole kingdom', kind = 'all'):
+def main(year = 'all', area = 'whole', kind = 'all'):
     """Main function to send value for plot graph"""
     if year == 'all':
-        y_forf = '53-59'
+        y_forf = '53-2559'
     elif year != 'all': #53 54 55 56 57 58 59
-        y_forf = str(year)
-    if area == 'Whole kingdom': #ทั้งประเทศ
+        y_forf = str(year)[-2:]
+    if area.lower() == 'whole': #ทั้งประเทศ
         a_forf = 'ทั้งประเทศ' #0-4
-    elif area == 'Municipal area': #เขตในเทศบาล
+    elif area.lower() == 'municipal': #เขตในเทศบาล
         a_forf = 'เขตในเทศบาล' #5-9
-    elif area == 'Non-municipal area': #เขตนอกเทศบาล
+    elif area.lower() == 'non-municipal': #เขตนอกเทศบาล
         a_forf = 'เขตนอกเทศบาล' #10-14
-    if kind == 'all':
+    if kind.lower() == 'all':
         k_forf = 'all'
-    elif kind == 'SMS': #sms
+    elif kind.lower() == 'sms': #sms
         k_forf = 0
-    elif kind == 'Data': #data
+    elif kind.lower() == 'data': #data
         k_forf = 1
-    elif kind == 'Mobile banking': #mobile banking
+    elif kind.lower() == 'banking': #banking
         k_forf = 2
-    elif kind == 'Mobile function': #mobile function
+    elif kind.lower() == 'function': #function
         k_forf = 3
-    elif kind == 'Other': #other
+    elif kind.lower() == 'other': #other
         k_forf = 4
     return plot_graph(y_forf, a_forf, k_forf)
 
@@ -51,8 +51,9 @@ def plot_graph(year, area, kind):
         k_name = 'ทั้งหมด'
     data_frame = pd.read_csv('./usedata/alldata.csv')
     line_chart = pg.Bar()
-    line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี ' + year
-    if year == '53-59':
+    line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี 25' + year
+    if year == '53-2559':
+        line_chart = pg.Line()
         line_chart.x_labels = range(53, 60)
         if kind == 'all':
             line_chart.add('SMS', [(data_frame['53u'])[0+a_start]*100/(data_frame['53t'])[0+a_start], (data_frame['54u'])[0+a_start]*100/(data_frame['54t'])[0+a_start], \
@@ -80,7 +81,7 @@ def plot_graph(year, area, kind):
                                    (data_frame['55u'])[kind+a_start]*100/(data_frame['55t'])[kind+a_start], (data_frame['56u'])[kind+a_start]*100/(data_frame['56t'])[kind+a_start], \
                                    (data_frame['57u'])[kind+a_start]*100/(data_frame['57t'])[kind+a_start], (data_frame['58u'])[kind+a_start]*100/(data_frame['58t'])[kind+a_start], \
                                    (data_frame['59u'])[kind+a_start]*100/(data_frame['59t'])[kind+a_start]])
-    elif year != '53-59':
+    elif year != '53-2559':
         if kind == 'all':
             line_chart.x_labels = ('SMS', 'Data', 'Mobile banking', 'Mobile function', 'Other')
             lst_data = []
