@@ -1,16 +1,22 @@
-activity to use Internet,Total,6-10 years,11-14 years,15 - 19 years,20 - 24 years,25 - 29 years,30 - 34 years,35 - 39 years,40 - 49 years,50 - 59 years,60 years 
-Sending or receiving e-mail,9558053,163325,861689,1987962,1306856,1166595,1185144,924515,1189011,659256,113700
-Search general Information/goods or services,7792912,176080,655855,1340685,1023997,1031666,999295,840502,1042601,565696,116535
-Order/Purchase goods or services Online ,971405,3841,21001,79497,141521,175361,179601,132491,148125,73684,16285
-Business and offering products / services.,725517,2337,11546,46415,80706,102211,144767,120681,143542,62026,11286
-Search for Information about goods / health services,4875868,82044,331175,766039,657151,604631,635361,527660,734513,441837,95456
-Search government Information,5732610,135830,519783,1032397,681735,656913,683645,561939,833508,546974,79889
-Contact/transfer Download the document /  transaction with the government agency,2762077,29170,103189,266675,297134,376745,427463,349599,526016,356591,29496
-Trace news / read or download newspaper or magazine (e-book) ,9119061,288160,961810,1897567,1195460,1067187,1028934,816671,1085514,643476,134282
-"Download picture/movies/video/music/games or playing games , or listening to radio music",13424703,896420,1963975,3044129,1801236,1479330,1352030,1031844,1194111,547951,113677
-Download Software,3097783,76888,275495,687860,518570,411825,378080,276958,318432,132368,21308
-"Webboard blog, chat / instant message",4508773,126939,522873,1118924,749215,592557,487752,383156,355813,143294,28251
-Social Network,10727455,365919,1404959,2587732,1616418,1344022,1180542,868608,897597,389394,72263
-Education learning activties,4425671,534375,1021032,1257558,522166,270353,245594,177753,232899,136783,27157
-Voice over Internet protocol (VOIP),1019959,25833,72727,195646,157628,143849,147458,102073,105193,57479,12072
-"Internet Banking , Mobile Banking",584189,1976,7252,13381,42455,87230,112388,89502,146892,72396,10716
+﻿Activity to use Internet ,Total,Internet using ,,,,
+Total,18312405,18312405,,,,
+E-mail,18312405,9558053,,,,
+Search general Information/goods or services,18312405,7792912,,,  ,
+Purchase goods or services,18312405,971405,,,,
+Business and offering products / services.,18312405,725517,,,,
+Search for Information about goods / health services,18312405,4875868,,,,
+Search government Information,18312405,5732610,,,,
+Contact / transfer Download the document / transaction with the government agency,18312405,2762077,,,,
+ Trace news / read or download newspaper or magazine (e-book) ,18312405,9119061,,, ,
+Games or download games,18312405,12948716,,,,
+"Download,movies,listening radio or music ",18312405,13424703,,,,
+Download Software,18312405,3097783,,,,
+"Webboard blog, chat / instant message",18312405,4508773,,,,
+"Social Network(Facebook,Twitter,Hi5 GooglePlus ect.)",18312405,10727455,,,,
+Education learning activties,18312405,4425671,,,,
+Voice over Internet protocol (VOIP),18312405,1019959,,,,
+Internet Banking,18312405,584189,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,83

@@ -1,16 +1,18 @@
-activity to use Internet,Total,6-10 years,11-14 years,15 - 19 years,20 - 24 years,25 - 29 years,30 - 34 years,35 - 39 years,40 - 49 years,50 - 59 years,60 years 
-Sending or receiving e-mail,3665213,24893,166887,638420,557771,606142,526366,399802,521292,200452,23190
-Search general Information/goods or services,11373965,422090,1768361,3108703,1394218,1205867,981380,799404,1132113,502446,59385
-Order/Purchase goods or services Online ,73960,0,250,1076,6056,13411,23399,10791,11259,5705,2014
-Business and offering products / services.,119523,0,79,162,6225,26613,30216,25203,18558,10517,1949
-Search for Information about goods / health services,0,0,0,0,0,0,0,0,0,0,0
-Search government Information,0,0,0,0,0,0,0,0,0,0,0
-Contact/transfer Download the document /  transaction with the government agency,182196,0,0,1420,12171,34955,27243,34376,46984,24592,455
-Trace news / read or download newspaper or magazine (e-book) ,3218419,40291,223672,674306,413648,458430,364232,307822,461674,239899,34445
-"Download picture/movies/video/music/games or playing games , or listening to radio music",2416693,103634,289448,724702,378211,310049,249694,140866,151881,58764,9444
-Download Software,116961,358,8920,25529,15816,21810,18360,11659,10698,3328,482
-"Webboard blog, chat / instant message",201972,3091,20488,69501,40270,17319,17943,14079,13152,4256,1872
-Social Network,1037382,17655,112179,385879,229361,125040,78906,32401,39018,11931,5012
-Education learning activties,1514061,180750,403017,566511,168972,48045,36817,23705,58594,25030,2622
-Voice over Internet protocol (VOIP),17160,373,4090,3589,50,3088,1770,1568,1859,599,176
-"Internet Banking , Mobile Banking",55183,0,0,92,1545,9984,13263,8918,16069,4982,329
+﻿Activity to use Internet ,Total,Internet using 
+Total,13844121,13844121
+E-mail,13844121,3665213
+Search general Information/goods or services,13844121,11373965
+Purchase goods or services,13844121,73960
+Business and offering products / services.,13844121,119523
+Search for Information about goods / health services,13844121,3218419
+Search government Information,13844121,3600121
+Contact / transfer Download the document / transaction with the government agency,13844121,182196
+ Trace news / read or download newspaper or magazine (e-book) ,13844121,3218419
+Games or download games,13844121,3536427
+"Download,movies,listening radio or music ",13844121,2416693
+Download Software,13844121,116961
+"Webboard blog, chat / instant message",13844121,201972
+"Social Network(Facebook,Twitter,Hi5 GooglePlus ect.)",13844121,1037382
+Education learning activties,13844121,1514061
+Voice over Internet protocol (VOIP),13844121,17160
+Internet Banking,13844121,55183

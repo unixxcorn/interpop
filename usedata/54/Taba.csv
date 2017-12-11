@@ -1,7 +1,7 @@
-Region,Fixed Broadband (Broadband),Mobile wireless 3G and above (Broadband),"Analogue modem, ISDN (Narrowband)","Mobile wireless  2G, 2.5G (Narrowband)",Total
-Whole kingdom,9032723,791912,3078775,849078,13752488
-Bangkok,1756666,264892,559531,132092,2713181
-Central region,2249237,174529,548139,221715,3193620
-Northern region,1903931,90643,380919,152159,2527652
-Northeastern region,2051091,148571,1255784,251265,3706711
-Southern region,1071800,113278,334403,91847,1611328
+Region,Total,Fixed Broadband (Broadband),Mobile wireless 3G and above (Broadband),"Analogue modem, ISDN (Narrowband)","Mobile wireless  2G, 2.5G (Narrowband)"
+Whole kingdom,14773403,9032723,791912,3078775,849078
+Bangkok,2594413,1756666,264892,559531,132092
+Central region,3448181,2249237,174529,548139,221715
+Northern region,2636240,1903931,90643,380919,152159
+Northeastern region,4297349,2051091,148571,1255784,251265
+Southern region,1797221,1071800,113278,334403,91847
