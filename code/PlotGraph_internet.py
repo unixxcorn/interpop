@@ -56,24 +56,23 @@ def main(choice='1', year='all'):
         for i in range(2, len(memo)):
             chart.add(str(memo[i]), [int((j*100)//data[memo[1]][0]) \
             for j in data[memo[i]][1:]])
-
     
     chart.x_labels = data_head
-    chart.render_to_file('../Graph/Graph_internet.svg')
+    return chart
 
 
 def call_data(choice, year):
     '''call data from csv'''
     data = []
-    location = {'1':'../usedata/' + year + '/Taba.csv',
-                '2':'../usedata/' + year + '/Tabc.csv',
-                '3':'../usedata/' + year + '/Tabd.csv'}
+    location = {'1':'./usedata/' + year + '/Taba.csv',
+                '2':'./usedata/' + year + '/Tabc.csv',
+                '3':'./usedata/' + year + '/Tabd.csv'}
     all_year = ['53', '54', '55', '56', '57' , '58', '59']
     if year == 'all':
         for i in all_year:
-            location = {'1':'../usedata/' + i + '/Taba.csv',
-                        '2':'../usedata/' + i + '/Tabc.csv',
-                        '3':'../usedata/' + i + '/Tabd.csv'}
+            location = {'1':'./usedata/' + i + '/Taba.csv',
+                        '2':'./usedata/' + i + '/Tabc.csv',
+                        '3':'./usedata/' + i + '/Tabd.csv'}
             year = i
             data.append(pd.read_csv(location[choice]))
     else:
@@ -81,4 +80,3 @@ def call_data(choice, year):
 
     return data
 
-main(input(), input())
