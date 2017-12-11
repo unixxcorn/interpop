@@ -58,6 +58,9 @@ def main(choice='1', year='all'):
             for j in data[memo[i]][1:]])
     
     chart.x_labels = data_head
+    chart.title = memo[0] + 'in 25' + year 
+    chart.render_to_file('Graph_internet.svg')
+
     return chart
 
 
