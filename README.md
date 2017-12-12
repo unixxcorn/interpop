@@ -1,6 +1,7 @@
 # Internet Population
 ### Author : We have a plan. For : PSIT Project
 
+
 ### Detail
 1. ข้อมูลที่เอามาใช้คืออะไร
   * ข้อมูลอัตราการใช้งานและจำนวนประชากรที่ใช้ คอมพิวเตอร์ โทรศัพท์มือถือ และ อินเทอร์เน็ต
@@ -21,6 +22,19 @@
   * https://webserv.kmitl.ac.th/unixcorn/
 8. URL github ของโครงการ ที่สามารถเข้าไปดู source code ได้
   * https://github.com/unixxcorn/we-have-a-plan
+
+### Requirement
+1. Python 3
+2. Pygal
+3. Pandas
+4. Flask
+
+### Install
+1. Install Python3 using exe for windows or "apt-get install python3" for linux
+2. Run "pip install pygal pandas flask" on your terminal or cmd
+3. Open "run.bat" for windows or run "sh ./run.sh" on terminal for linux
+4. Open your website
+5. Ctrl+C to terminate
 
 ### GIT
 #### Download https://git-scm.com/downloads
