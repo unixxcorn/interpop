@@ -30,20 +30,9 @@
 4. Flask
 
 ### Install
-1. Install Python3 using exe for windows or "apt-get install python3" for linux
+1. Install Python3.6 or newer (https://www.python.org/downloads/) for windows or "apt-get install python3" for linux
 2. Run "pip install pygal pandas flask" on your terminal or cmd
 3. Open "run.bat" for windows or run "sh ./run.sh" on terminal for linux
 4. Open your website
 5. Ctrl+C to terminate
 
-### GIT
-#### Download https://git-scm.com/downloads
-##### วิธีรีโหมด GIT // เปิดโฟล์เดอร์
-* git init
-* git remote add [ชื่อรีโหมด] https://github.com/unixxcorn/we-have-a-plan.git
-##### วิธีดึงไฟล์  // เปิดดาวน์โหลด
-* git pull -u [ชื่อรีโหมด] [branch]
-##### วิธีดันไฟล์  // เปิดอัพโหลด
-* git add [ชื่อไฟล์.นามสกุล]
-* git commit -m "What do you want to say?"
-* git push -u [ชื่อรีโหมด] [branch]
