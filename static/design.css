@@ -2,11 +2,11 @@
 .navbar {
     background-color: black;
 }
-*{
-    overflow: hidden;
-}
 html{
     overflow-y: auto;
+}
+body{
+    overflow-y:hidden;
 }
 html, body{
     background-color: black;
