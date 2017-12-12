@@ -6,46 +6,168 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InterPop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='animate.css') }}">
+    <style>
+
+        .video-background {
+        background: #000;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -99;
+        filter: blur(3px) grayscale(1) contrast(2.1);
+        }
+        .video-foreground,
+        .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        }
+        #vidtop-content {
+            top: 0;
+            color: #fff;
+        }
+        .vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+        .vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+        .vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+        @media (min-aspect-ratio: 16/9) {
+        .video-foreground { height: 300%; top: -100%; }
+        }
+        @media (max-aspect-ratio: 16/9) {
+        .video-foreground { width: 300%; left: -100%; }
+        }
+        @media all and (max-width: 600px) {
+        .vid-info { width: 50%; padding: .5rem; }
+        .vid-info h1 { margin-bottom: .2rem; }
+        }
+        @media all and (max-width: 500px) {
+        .vid-info .acronym { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <div class="animated fadeInDown header text-center" style="height:100vh;">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">Internet Population</h1>
-                <p class="lead">The analysis of Thailand internet usage from 2553 to 2559</p>
-                <hr>
-                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="/analysis/" role="button">Analysis</a>
-                <div class="btn-group m-1 col-md-2 col-sm-3 p-0">
-                    <button type="button" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Charts
-                    </button>
-                    {% include 'dropdown_chart.html' %}
-                </div>
-                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="https://github.com/unixxcorn/interpop" role="button">Github</a>
+    <div class="animated fadeInDown header text-center align-middle full-lg" style="" id="vidtop-content">
+        <div class="video-background">
+            <div class="video-foreground">
+                <iframe src="//player.vimeo.com/video/178947000?title=0&portrait=0&byline=0&autoplay=1&loop=1" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="container align-middle" style="padding-top:20vh">
+            <h1 class="display-4 align-middle">Internet Population</h1>
+            <p class="lead align-middle">การวิเคราะห์การใช้อินเตอร์เน็ตภายในประเทศไทย ตั้งแต่ พ.ศ.2553 ถึง 2559</p>
+            <div class="btn-group m-1 col-md-2 col-sm-3 p-0">
+                <button type="button" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    analysis
+                </button>
+                {% include 'dropdown_analysis.html' %}
+            </div>
+            <div class="btn-group m-1 col-md-2 col-sm-3 p-0">
+                <button type="button" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Charts
+                </button>
+                {% include 'dropdown_chart.html' %}
+            </div>
+            <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="https://github.com/unixxcorn/interpop" role="button">Github</a>
+        </div>
+    </div>
+    <div class="animated fadeInDown header text-center full-lg" style="background-color:black;">
+        <div class="container col-12 row p-5">
+            <h1 class="col-lg-12 my-5" style="font-size:5em;">Data</h1>
+            <div class="col-lg-4">
+                <h3>ข้อมูลที่ใช้คิออะไร<br /><br />
+                <i style="font-size:2em;" class="material-icons">description</i>
+                </h3><br />
+                <p>อัตราการใช้งานอินเตอร์เน็ต โทรศัพท์ และคอมพิวเตอร์</p>
+                <br /><br />
+            </div>
+            <div class="col-lg-4">
+                <h3>ข้อมูลที่ใช้เป็นอย่างไร<br /><br />
+                <i style="font-size:2em;" class="material-icons">settings</i>
+                </h3><br />
+                <p>เป็นไฟล์ข้อมูล .xls จากเว็บไซต์สำนักงานสถิติแห่งชาติ</p>
+                <br /><br />
+            </div>
+            <div class="col-lg-4">
+                <h3>ข้อมูลที่ใช้มีแค่ไหน<br /><br />
+                <i style="font-size:2em;" class="material-icons">storage</i>
+                </h3><br />
+                <p>ข้อมูลถูกรวบรวมตั้งแต่ปี พ.ศ.2553 - พ.ศ.2559</p>
+                <br /><br />
             </div>
         </div>
     </div>
-    <div class="animated fadeInDown header text-center" style="height:100vh;">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">Internet Population</h1>
-                <p class="lead">The analysis of Thailand internet usage from 2553 to 2559</p>
-                <hr>
-                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="/analysis/" role="button">Analysis</a>
-                <div class="btn-group m-1 col-md-2 col-sm-3 p-0">
-                    <button type="button" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Charts
-                    </button>
-                    {% include 'dropdown_chart.html' %}
-                </div>
-                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="https://github.com/unixxcorn/interpop" role="button">Github</a>
+    <div class="animated fadeInDown header text-center full-lg" style="background-color:black;">
+        <div class="container col-12 row p-5">
+            <h1 class="col-lg-12 my-5" style="font-size:5em;">Process</h1>
+            <div class="col-lg-4">
+                <h3>อ่านและแปลงไฟล์<br /><br />
+                <i style="font-size:2em;" class="material-icons">find_in_page</i>
+                </h3><br />
+                <p>ทำการอ่านข้อมูล และแปลงไฟล์จาก xlsx และ xls เป็น csv ในรูปแบบที่พร้อมเข้าสู่โปรแกรม ผ่าน Module Pandas</p>
+                <br /><br />
             </div>
+            <div class="col-lg-4">
+                <h3>พล็อตกราฟ และวิเคราะห์แนวโน้ม<br /><br />
+                <i style="font-size:2em;" class="material-icons">timeline</i>
+                </h3><br />
+                <p>พล็อตกราฟและวิเคราะห์แนวโน้มด้วยโปรแกรมที่เขียนขึ้นในภาษา Python โดยใช้ Module PyGal เพื่อพล็อตกราฟและ Flask เพื่อแสดงผลในรูปแบบของเว็บเพื่อให้ง่ายต่อการใช้งาน</p>
+                <br /><br />
+            </div>
+            <div class="col-lg-4">
+                <h3>วิเคราะห์ และหาสาเหตุ<br /><br />
+                <i style="font-size:2em;" class="material-icons">sync</i>
+                </h3><br />
+                <p>ดูกราฟจากโปรแกรมที่ถูกพล็อต หาจุดที่มีการเปลี่ยนแปลงอย่างมีนัยสำคัญ และหาสาเหตุที่ทำให้เกิดการเปลี่ยนแปลงในครั้งนั้นๆ แล้วจึงสรุปลงในรูปของเว็บไซต์ผ่าน Module Flask</p>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+    <div class="animated fadeInDown header text-center full-lg" style="background-color:black;">
+        <div class="container col-12 row p-5">
+            <h1 class="col-lg-12 my-5" style="font-size:5em;">
+                See our project on Github <br /><br />
+                <a class="btn btn-primary m-1" style="font-size:0.8em;" href="https://github.com/unixxcorn/interpop" role="button">Go to github</a>
+            </h1>
+        </div>
+    </div>
+    <div class="animated fadeInDown header text-center full-lg" style="background-color:black;">
+        <div class="container col-10 mx-auto row p-5">
+            <h1 class="col-lg-12 my-5" style="font-size:5em;">Process</h1>
+            <div class="col-lg-4">
+                <h3>อ่านและแปลงไฟล์<br /><br />
+                <i style="font-size:2em;" class="material-icons">find_in_page</i>
+                </h3><br />
+                <p>ทำการอ่านข้อมูล และแปลงไฟล์จาก xlsx และ xls เป็น csv ในรูปแบบที่พร้อมเข้าสู่โปรแกรม ผ่าน Module Pandas</p>
+                <br /><br />
+            </div>
+            <div class="col-lg-4">
+                <h3>พล็อตกราฟ และวิเคราะห์แนวโน้ม<br /><br />
+                <i style="font-size:2em;" class="material-icons">timeline</i>
+                </h3><br />
+                <p>พล็อตกราฟและวิเคราะห์แนวโน้มด้วยโปรแกรมที่เขียนขึ้นในภาษา Python โดยใช้ Module PyGal เพื่อพล็อตกราฟและ Flask เพื่อแสดงผลในรูปแบบของเว็บเพื่อให้ง่ายต่อการใช้งาน</p>
+                <br /><br />
+            </div>
+            <div class="col-lg-4">
+                <h3>วิเคราะห์ และหาสาเหตุ<br /><br />
+                <i style="font-size:2em;" class="material-icons">sync</i>
+                </h3><br />
+                <p>ดูกราฟจากโปรแกรมที่ถูกพล็อต หาจุดที่มีการเปลี่ยนแปลงอย่างมีนัยสำคัญ และหาสาเหตุที่ทำให้เกิดการเปลี่ยนแปลงในครั้งนั้นๆ แล้วจึงสรุปลงในรูปของเว็บไซต์ผ่าน Module Flask</p>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+    <div class="animated fadeInDown header text-center full-lg" style="blackground-color:black;">
+        <div class="container col-10 mx-auto row p-5">
+         <h1 class="col-lg-12 my-5" style="font-size:5em;">Analytical results</h1>
+        {% include 'analysis/Internet.html' %}
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>

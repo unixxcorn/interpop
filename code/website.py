@@ -5,7 +5,9 @@ app = Flask("Internet Population")
 
 @app.route('/')
 def index():
-    return render_template( 'home.html')
+    import PlotGraph_internet as internet
+    from pygal.style import NeonStyle
+    return render_template( 'home.html', **locals())
 
 @app.route('/analysis/')
 @app.route('/analysis/<data>')

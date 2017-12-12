@@ -2,6 +2,12 @@
 .navbar {
     background-color: black;
 }
+*{
+    overflow: hidden;
+}
+html{
+    overflow-y: auto;
+}
 html, body{
     background-color: black;
     color:#f6f6f6;
@@ -40,4 +46,7 @@ html, body{
     text-indent: 25px;
     margin:30px 5px;
     z-index: 30;
+}
+.full-lg {
+    min-height:100vh;
 }
