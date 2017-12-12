@@ -10,6 +10,12 @@ def index():
 @app.route('/analysis/')
 @app.route('/analysis/<data>')
 def analysis_route(data="Internet Population"):
+    import growth as gr
+    import PlotGraph_com as com
+    import PlotGraph_internet as internet
+    import PlotGraph_main as main
+    import PlotGraph_phone as phone
+    from pygal.style import NeonStyle
     return render_template('analysis.html', **locals())
 
 @app.route('/charts/main/')

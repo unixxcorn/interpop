@@ -1,8 +1,10 @@
 """Growth"""
 import pandas as pd
 import pygal
+from pygal.style import NeonStyle
+from pygal.style import DefaultStyle
 
-def main():
+def main(style=DefaultStyle):
     """
         .
     """
@@ -55,9 +57,9 @@ def main():
             memo = j
             ans[0] = 0
         fin.append(ans)
-    chart = pygal.Bar()
+    chart = pygal.Bar(style=style)
     chart.x_labels = year[1:]
     chart.title = 'The growth of computer, internet and mobile in Thailand'
     for i in range(len(fin)):
         chart.add(head[i], fin[i][1:])
-    return chart.render_data_uri()
+    return chart

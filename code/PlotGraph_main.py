@@ -2,7 +2,9 @@
 import pandas as pd
 import pygal
 import math
-def main(whatuse = 'Computer', whatyear = 'all', whatfilter = 'area'):
+from pygal.style import NeonStyle
+from pygal.style import DefaultStyle
+def main(whatuse = 'Computer', whatyear = 'all', whatfilter = 'area', style=DefaultStyle):
     """main(whatuse, whatyear, whatfilter)
         whatuse
         1.Computer
@@ -37,7 +39,7 @@ def main(whatuse = 'Computer', whatyear = 'all', whatfilter = 'area'):
 
     if whatyear == 'all':
         bar_chart = pygal.Line(title = 'Graph '+whatuse+' using('\
-                    +whatfilter+') in '+whatyear+' year (100%)')
+                    +whatfilter+') in '+whatyear+' year (100%)', style=style)
         count = 1
         data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
         for i in range(len(info)):
@@ -45,7 +47,7 @@ def main(whatuse = 'Computer', whatyear = 'all', whatfilter = 'area'):
             count += 1
     else:
         bar_chart = pygal.Bar(title = 'Graph '+whatuse+' using('\
-                    +whatfilter+') in '+whatyear+' year (100%)')
+                    +whatfilter+') in '+whatyear+' year (100%)', style=style)
         data_head = [i for i in data[head][1:]]
         bar_chart.add('', info)
     bar_chart.x_labels = [i for i in data_head]

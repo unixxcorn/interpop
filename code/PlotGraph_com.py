@@ -1,7 +1,9 @@
 """ To create for only computer using's graph"""
 import pandas as pd
 import pygal as pg
-def com(whatfilter="location", whatyear="all",whatfilter_type='1', num=0):
+from pygal.style import NeonStyle
+from pygal.style import DefaultStyle
+def com(whatfilter="location", whatyear="all",whatfilter_type='1', style=DefaultStyle, num=0):
     """
         Plot only Computer using graph
         com(whatilter, whatyear)
@@ -24,20 +26,20 @@ def com(whatfilter="location", whatyear="all",whatfilter_type='1', num=0):
     if whatyear == 'all':
         if whatfilter.lower() == "location" or whatfilter == "activity":
             h_kind = info_kind[1]
-            chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+' old)')
+            chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+' old)', style=style)
             data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
             kind = list((data[num])[whatfilter])
             for i in range(len(kind)):
                 chart.add(kind[i], info[i])
         if whatfilter.lower() == 'region':
             h_kind = info_kind[1]
-            chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+')')
+            chart = pg.Line(title=head_graph+' in 100%'+' ('+h_kind+')', style=style)
             data_head = ['2553', '2554', '2555', '2556', '2557', '2558', '2559']
             kind = list((data[num])[whatfilter])
             for i in range(len(kind)):
                 chart.add(kind[i], info[i])
     else: #single year
-        chart = pg.Bar(title=head_graph+'  (100%)')
+        chart = pg.Bar(title=head_graph+'  (100%)', style=style)
         data_head = [i for i in data[whatfilter]]
         kind = list(data)[2:]
         for i in range(len(kind)):

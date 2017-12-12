@@ -2,8 +2,10 @@
 
 import pandas as pd
 import pygal
+from pygal.style import NeonStyle
+from pygal.style import DefaultStyle
 
-def main(choice='1', year='all'):
+def main(choice='1', year='all', style=DefaultStyle):
     '''Core function
         choice
             1 = Number of Internet users by type of access
@@ -14,7 +16,7 @@ def main(choice='1', year='all'):
     '''
     data = call_data(choice, year)
     if year == 'all' and choice == '3':
-        chart = pygal.Line()
+        chart = pygal.Line(style=style)
         chart.title = 'Total number of Internet users by Activities'
         temp = []
         data_add = [i for i in data[0]['Activity to use Internet '] if i != 'Total']
@@ -29,7 +31,7 @@ def main(choice='1', year='all'):
             chart.add(data_add[i], temp[i])
 
     elif year == 'all':
-        chart = pygal.Line()
+        chart = pygal.Line(style=style)
         if choice == '1':
         	chart.title = 'Total number of Internet users by Type'
         else:
@@ -48,7 +50,7 @@ def main(choice='1', year='all'):
             chart.add(data_add[i], temp[i])
 
     else:
-        chart = pygal.Bar()
+        chart = pygal.Bar(style=style)
         memo = [i for i in data]
         data_head = [i for i in data[memo[0]] if i != 'Whole kingdom' and i != 'Total']
         chart.title = memo[0] + ' in 25' + year

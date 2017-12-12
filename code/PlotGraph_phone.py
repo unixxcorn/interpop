@@ -2,8 +2,10 @@
 import pandas as pd
 import numpy as np
 import pygal as pg
+from pygal.style import NeonStyle
+from pygal.style import DefaultStyle
 
-def main(year = 'all', area = 'whole', kind = 'all'):
+def main(year = 'all', area = 'whole', kind = 'all', style=DefaultStyle):
     """Main function to send value for plot graph"""
     if year == 'all':
         y_forf = '53-2559'
@@ -25,9 +27,9 @@ def main(year = 'all', area = 'whole', kind = 'all'):
         k_forf = 2
     elif kind.lower() == 'function': #function
         k_forf = 3
-    return plot_graph(y_forf, a_forf, k_forf)
+    return plot_graph(y_forf, a_forf, k_forf, style)
 
-def plot_graph(year, area, kind):
+def plot_graph(year, area, kind, style):
     """Function for plot graph"""
     if area == 'ทั้งประเทศ':
         a_start = 0
@@ -46,10 +48,10 @@ def plot_graph(year, area, kind):
     elif kind == 'all':
         k_name = 'ทั้งหมด'
     data_frame = pd.read_csv('./usedata/alldata.csv')
-    line_chart = pg.Bar()
+    line_chart = pg.Bar(style=style)
     line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี 25' + year
     if year == '53-2559':
-        line_chart = pg.Line()
+        line_chart = pg.Line(style=style)
         line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี 25' + year
         line_chart.x_labels = range(53, 60)
         if kind == 'all':
