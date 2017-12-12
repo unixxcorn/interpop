@@ -11,7 +11,7 @@ def index():
 @app.route('/analysis/<data>')
 def analysis_route(data="Internet Population"):
     import growth as gr
-    import PlotGraph_com as com
+    import PlotGraph_com as computer
     import PlotGraph_internet as internet
     import PlotGraph_main as main
     import PlotGraph_phone as phone

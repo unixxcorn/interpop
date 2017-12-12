@@ -10,7 +10,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='animate.css') }}">
 </head>
 <body>
-    <div class="animated fadeInDown header text-center">
+    <div class="animated fadeInDown header text-center" style="height:100vh;">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Internet Population</h1>
+                <p class="lead">The analysis of Thailand internet usage from 2553 to 2559</p>
+                <hr>
+                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="/analysis/" role="button">Analysis</a>
+                <div class="btn-group m-1 col-md-2 col-sm-3 p-0">
+                    <button type="button" class="btn btn-primary dropdown-toggle col-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Charts
+                    </button>
+                    {% include 'dropdown_chart.html' %}
+                </div>
+                <a class="btn btn-primary m-1 col-md-2 col-sm-3" href="https://github.com/unixxcorn/interpop" role="button">Github</a>
+            </div>
+        </div>
+    </div>
+    <div class="animated fadeInDown header text-center" style="height:100vh;">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-3">Internet Population</h1>
