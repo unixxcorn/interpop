@@ -52,15 +52,11 @@ def main(choice='1', year='all'):
         memo = [i for i in data]
         data_head = [i for i in data[memo[0]] if i != 'Whole kingdom' and i != 'Total']
         chart.title = memo[0] + ' in 25' + year
-        
         for i in range(2, len(memo)):
             chart.add(str(memo[i]), [int((j*100)//data[memo[1]][0]) \
             for j in data[memo[i]][1:]])
-    
+	chart.title = memo[0] + 'in 25' + year
     chart.x_labels = data_head
-    chart.title = memo[0] + 'in 25' + year 
-    chart.render_to_file('Graph_internet.svg')
-
     return chart
 
 
