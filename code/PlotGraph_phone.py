@@ -50,6 +50,7 @@ def plot_graph(year, area, kind):
     line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี 25' + year
     if year == '53-2559':
         line_chart = pg.Line()
+        line_chart.title = 'จำนวนการใช้บริการ' + k_name + 'ทางโทรศัพท์ ของ' + area + ' ในปี 25' + year
         line_chart.x_labels = range(53, 60)
         if kind == 'all':
             line_chart.add('SMS', [(data_frame['53u'])[0+a_start]*100/(data_frame['53t'])[0+a_start], (data_frame['54u'])[0+a_start]*100/(data_frame['54t'])[0+a_start], \
