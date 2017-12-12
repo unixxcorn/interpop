@@ -39,6 +39,5 @@ html, body{
     text-align: left;
     text-indent: 25px;
     margin:30px 5px;
-    text-overflow: '...?';
     z-index: 30;
 }
