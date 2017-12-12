@@ -55,7 +55,7 @@ def main(choice='1', year='all'):
         for i in range(2, len(memo)):
             chart.add(str(memo[i]), [int((j*100)//data[memo[1]][0]) \
             for j in data[memo[i]][1:]])
-	chart.title = memo[0] + 'in 25' + year
+        chart.title = memo[0] + 'in 25' + year
     chart.x_labels = data_head
     return chart
 
