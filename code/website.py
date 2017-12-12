@@ -44,7 +44,7 @@ def PlotGraph_com_route_attrib(whatyear, whatfilter):
 @app.route('/charts/internet/')
 @app.route('/charts/internet/<choice>/')
 @app.route('/charts/internet/<choice>/<year>')
-def PlotGraph_internet_route_attrib(choice='users', year='all'):
+def PlotGraph_internet_route_attrib(choice='type', year='all'):
     selector = {'type':'1', 'time':'2', 'activities':'3'}
     choice = selector[choice.lower()]
     import PlotGraph_internet
